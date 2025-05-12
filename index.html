@@ -1,0 +1,274 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackbox Party Pack 1 - Мод "Попизделки"</title>
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --accent: #FFE66D;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: radial-gradient(circle, rgba(41,47,54,0.8) 0%, rgba(41,47,54,1) 100%), url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://www.jackboxgames.com/wp-content/uploads/2015/08/jpp1-logo.png') center/contain no-repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        h2 {
+            color: var(--accent);
+            border-bottom: 2px dashed var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(41, 47, 54, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .mod-highlight {
+            background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(78,205,196,0.2));
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 2px dashed var(--primary);
+            text-align: center;
+        }
+        
+        .mod-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .mod-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(247, 255, 247, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: rgba(247, 255, 247, 0.15);
+        }
+        
+        .feature-card h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+        
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .screenshot {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(0,0,0,0.3);
+            margin-top: 2rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .mod-title {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 1rem;
+                margin-top: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jackbox Party Pack 1</h1>
+    </header>
+    
+    <div class="container">
+        <div class="mod-highlight">
+            <div class="mod-title">Мод "Попизделки" на телефоны!</div>
+            <div class="mod-description">
+                Русский мод для игры "Fibbage XL" из Jackbox Party Pack 1, который превращает ваши вечеринки в незабываемые посиделки с друзьями!
+            </div>
+        </div>
+        
+        <div class="quote">
+            "Это не просто мод - это стиль жизни. Теперь ваши друзья будут смеяться до слез, а не до коликов!"
+        </div>
+        
+        <h2>Что такое "Попизделки"?</h2>
+        <p>
+            "Попизделки" - это сворованный и переделанный мод на Fibbage XL от What IF, где есть шутки про писюн, ким чен ина и гдз. Больше не нужно объяснять друзьям непереводимые шутки - теперь всё на родном языке!
+        </p>
+        
+        <h2>Особенности мода</h2>
+        <div class="features">
+            
+            
+            
+            
+            <div class="feature-card">
+                <h3>Нету</h3>
+                <p>Жалко.</p>
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+        
+        <h2>Как установить?</h2>
+        <ol>
+            <li>Скачайте архив с модом по кнопке ниже</li>
+            <li>Скачайте и играйте!</li>
+            
+            
+        </ol>
+        
+        <div style="text-align: center;">
+            <a href="#" class="download-btn">Скачать мод (v хз, ??? MB)</a>
+            <p><small>Версия для Jackbox Party Pack 1 на телефоны. Своровано у ТГ канала t.me/Jackbox_Pack (прошу не бейте)</small></p>
+        </div>
+        
+        
+        
+        
+        <h2>Отзывы игроков</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Отзывов тоже нету</h3>
+                <p>Тоже жалко.</p>
+                
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+    
+    <footer>
+        <p>Мод "Попизделки" является неофициальной модификацией для игры Jackbox Party Pack 1.</p>
+        <p>Все права на оригинальную игру принадлежат Jackbox Games, Inc.</p>
+        
+    </footer>
+
+</body></html>
